@@ -1,1 +1,960 @@
-index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>PMIC Reparaciones | Laboratorio Técnico Especializado en Santa Rosa, La Pampa</title>
+  <meta name="description" content="Servicio técnico especializado en celulares Android, iPhone, Notebooks y PlayStation en Santa Rosa, La Pampa. Cotizador interactivo a WhatsApp, repuestos premium y garantía escrita.">
+  <meta name="theme-color" content="#ff6a00">
+
+  <!-- Open Graph / Meta Social -->
+  <meta property="og:title" content="PMIC Reparaciones | Celulares, Notebooks y Consolas">
+  <meta property="og:description" content="¿Se rompió justo cuando más lo necesitabas? Reparaciones rápidas con garantía en Santa Rosa, La Pampa. Cotizá en vivo a WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/pmic-banner.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="assets/chip-logo-clean.png">
+</head>
+<body>
+
+  <!-- Background Animated High-Tech Canvas -->
+  <canvas id="circuit-bg"></canvas>
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Brand Logo -->
+      <a href="#inicio" class="brand-link" title="PMIC Reparaciones - Santa Rosa La Pampa">
+        <img src="assets/chip-logo-clean.png" alt="PMIC Chip Logo" class="brand-chip-icon">
+        <div class="brand-text-wrapper">
+          <img src="assets/pmic-brand-clean.png" alt="PMIC REPARACIONES" class="brand-pmic-img">
+          <div class="brand-location-tag">
+            <i class="fa-solid fa-location-dot"></i> Santa Rosa, La Pampa
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="#inicio" class="nav-link">Inicio</a></li>
+          <li><a href="#especialidades" class="nav-link">Dispositivos</a></li>
+          <li><a href="#cotizador" class="nav-link">Cotizador Online</a></li>
+          <li><a href="#por-que-pmic" class="nav-link">Laboratorio</a></li>
+          <li><a href="#medios-pago" class="nav-link">Pagos</a></li>
+          <li><a href="#garantia" class="nav-link">Garantía</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header CTAs & Status -->
+      <div class="header-cta-group">
+        <div class="status-pill" title="Atendiendo consultas en Santa Rosa">
+          <span class="status-dot"></span>
+          <span>Taller Abierto</span>
+        </div>
+
+        <a href="#cotizador" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.88rem;">
+          <i class="fa-solid fa-bolt"></i> Cotizar
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Abrir menú de navegación">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Slide Drawer -->
+    <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+      <a href="#inicio" class="mobile-nav-link"><span>Inicio</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="#especialidades" class="mobile-nav-link"><span>Dispositivos & Especialidades</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="#cotizador" class="mobile-nav-link"><span>Cotizador Interactivo WhatsApp</span> <i class="fa-solid fa-bolt text-orange"></i></a>
+      <a href="#por-que-pmic" class="mobile-nav-link"><span>¿Por Qué PMIC?</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="#medios-pago" class="mobile-nav-link"><span>Medios de Pago</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="#garantia" class="mobile-nav-link"><span>Garantía Legal (Ley 24.240)</span> <i class="fa-solid fa-shield-halved text-orange"></i></a>
+      <a href="#contacto" class="mobile-nav-link"><span>Ubicación & Teléfono</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="https://wa.me/5492954274960?text=Hola%20PMIC%20Reparaciones!%20Quiero%20hacer%20una%20consulta." target="_blank" class="btn btn-whatsapp" style="width: 100%; margin-top: 0.5rem;">
+        <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp Directo
+      </a>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section id="inicio" class="hero-section">
+    <div class="container hero-grid">
+      <!-- Left Column: Copy & Actions -->
+      <div class="hero-content">
+        <div class="hero-badge-live">
+          <i class="fa-solid fa-microchip"></i> Microelectrónica & Laboratorio Especializado
+        </div>
+
+        <h1 class="hero-headline">
+          ¿Se rompió justo cuando <span class="highlight">más lo necesitabas?</span>
+        </h1>
+
+        <p class="hero-description">
+          Sabemos lo frustrante que es quedarse desconectado. En <strong>PMIC Reparaciones</strong> te lo solucionamos <strong>rápido, con repuestos de calidad y garantía por escrito</strong>.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#cotizador" class="btn btn-primary">
+            <i class="fa-solid fa-calculator"></i> Cotizador Interactivo
+          </a>
+          <a href="https://wa.me/5492954274960?text=Hola%20PMIC%20Reparaciones!%20Necesito%20presupuesto%20para%20un%20equipo." target="_blank" class="btn btn-secondary">
+            <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> WhatsApp Directo
+          </a>
+        </div>
+
+        <!-- Trust Highlights -->
+        <div class="hero-highlights">
+          <div class="highlight-item">
+            <div class="highlight-icon"><i class="fa-solid fa-bolt"></i></div>
+            <div class="highlight-text">
+              <h4>Reparación Express</h4>
+              <p>Soluciones en el día</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="highlight-text">
+              <h4>Garantía 30 Días</h4>
+              <p>Ley 24.240 Def. Consumidor</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon"><i class="fa-solid fa-credit-card"></i></div>
+            <div class="highlight-text">
+              <h4>Todos los Pagos</h4>
+              <p>Tarjetas y Mercado Pago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive 3D Cyber Chip Card -->
+      <div class="hero-visual">
+        <div class="tech-card-3d">
+          <div class="tech-card-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+            </div>
+            <span class="tech-card-badge">PMIC // LAB DIAGNOSTIC</span>
+          </div>
+
+          <!-- Chip Visual with Laser Scan -->
+          <div class="chip-showcase-container">
+            <img src="assets/chip-logo-clean.png" alt="PMIC Microchip" class="chip-showcase-img">
+            <div class="chip-radar-scan"></div>
+          </div>
+
+          <!-- Supported Devices Pills -->
+          <div class="tech-card-footer">
+            <div class="supported-device-pill">
+              <i class="fa-brands fa-android"></i>
+              <span>Android</span>
+            </div>
+            <div class="supported-device-pill">
+              <i class="fa-brands fa-apple"></i>
+              <span>iPhone</span>
+            </div>
+            <div class="supported-device-pill">
+              <i class="fa-solid fa-laptop"></i>
+              <span>Notebook</span>
+            </div>
+            <div class="supported-device-pill">
+              <i class="fa-brands fa-playstation"></i>
+              <span>PlayStation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SUPPORTED PLATFORMS BANNER STRIP
+       ========================================================================== -->
+  <div class="platforms-banner-strip">
+    <div class="container platforms-grid">
+      <div class="platform-badge-item">
+        <i class="fa-brands fa-android"></i>
+        <span class="platform-name">Android</span>
+      </div>
+      <div class="platform-badge-item">
+        <i class="fa-brands fa-apple"></i>
+        <span class="platform-name">iPhone</span>
+      </div>
+      <div class="platform-badge-item">
+        <i class="fa-solid fa-laptop"></i>
+        <span class="platform-name">Notebook</span>
+      </div>
+      <div class="platform-badge-item">
+        <i class="fa-brands fa-playstation"></i>
+        <span class="platform-name">PlayStation</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       INTERACTIVE QUOTE CALCULATOR (COTIZADOR INTERACTIVO A WHATSAPP)
+       ========================================================================== -->
+  <section id="cotizador" class="quote-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-tag"><i class="fa-solid fa-bolt"></i> Cotización en Tiempo Real</span>
+        <h2 class="section-title">Cotizador Interactivo <span class="text-orange">a WhatsApp</span></h2>
+        <p class="section-subtitle">
+          Configurá tu equipo y la falla técnica en segundos. Nuestro sistema creará un ticket digital optimizado que podrás enviar a nuestro WhatsApp técnico con un solo clic.
+        </p>
+      </div>
+
+      <div class="quote-calculator-card">
+        <!-- Left: Interactive Form Pane -->
+        <div class="quote-form-pane">
+          <!-- Step 1: Device Selector -->
+          <div class="step-indicator">
+            <span class="step-number-badge">1</span>
+            <span class="step-label">Seleccioná tu Dispositivo</span>
+          </div>
+          <div class="device-selector-grid">
+            <button type="button" class="device-btn active" data-device="android">
+              <i class="fa-brands fa-android"></i>
+              <span>Android</span>
+            </button>
+            <button type="button" class="device-btn" data-device="iphone">
+              <i class="fa-brands fa-apple"></i>
+              <span>iPhone</span>
+            </button>
+            <button type="button" class="device-btn" data-device="notebook">
+              <i class="fa-solid fa-laptop"></i>
+              <span>Notebook</span>
+            </button>
+            <button type="button" class="device-btn" data-device="console">
+              <i class="fa-brands fa-playstation"></i>
+              <span>Consola</span>
+            </button>
+          </div>
+
+          <!-- Step 2: Brand & Model -->
+          <div class="form-group">
+            <div class="step-indicator">
+              <span class="step-number-badge">2</span>
+              <span class="step-label">Modelo del Equipo</span>
+            </div>
+            <input type="text" id="quote-model" class="form-input" placeholder="Ej: Samsung S23, Moto G84, iPhone 13, PS5..." autocomplete="off">
+            <div id="quick-models-container" class="quick-models-list">
+              <!-- Dynamically populated chips -->
+            </div>
+          </div>
+
+          <!-- Step 3: Issue Type -->
+          <div class="form-group">
+            <div class="step-indicator">
+              <span class="step-number-badge">3</span>
+              <span class="step-label">Tipo de Falla o Servicio</span>
+            </div>
+            <select id="quote-issue" class="form-select">
+              <option value="pantalla">Pantalla rota / Sin imagen / Táctil no responde</option>
+              <option value="bateria">Batería hinchada / Se descarga rápido / No dura</option>
+              <option value="carga">Pin de carga dañado / Falso contacto / No carga</option>
+              <option value="no-enciende">No enciende / Se apagó de golpe / En corto</option>
+              <option value="mojado">Equipo mojado / Cayó agua (Limpieza Ultrasonido)</option>
+              <option value="termico">Mantenimiento térmico / Se calienta / Ventilador ruidoso</option>
+              <option value="hdmi">Puerto HDMI dañado (PlayStation / Consola)</option>
+              <option value="drift">Joystick con Drift / Falla análogos</option>
+              <option value="upgrade">Lento / Cambio a Disco SSD ultra rápido + RAM</option>
+              <option value="bisagras">Bisagras rotas / Carcasa rajada de Notebook</option>
+              <option value="software">Error de sistema / Bloqueado / Formateo</option>
+              <option value="otro">Otro problema (Especificar abajo)</option>
+            </select>
+          </div>
+
+          <!-- Step 4: Urgency Level -->
+          <div class="form-group">
+            <label class="form-label">Nivel de Prioridad</label>
+            <div class="urgency-grid">
+              <div class="urgency-option active">
+                <input type="radio" id="urgency-normal" name="quote-urgency" value="normal" checked>
+                <label for="urgency-normal">🕒 Estándar (Diagnóstico cuidadoso)</label>
+              </div>
+              <div class="urgency-option">
+                <input type="radio" id="urgency-express" name="quote-urgency" value="express">
+                <label for="urgency-express">⚡ Urgente Express (En el día)</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5: Optional Details -->
+          <div class="form-group">
+            <label class="form-label" for="quote-details">Detalles adicionales o síntomas (Opcional)</label>
+            <textarea id="quote-details" class="form-textarea" placeholder="Ej: Se cayó de un metro, parpadea la pantalla al enchufarlo..."></textarea>
+          </div>
+        </div>
+
+        <!-- Right: Live WhatsApp Ticket Terminal -->
+        <div class="quote-ticket-pane">
+          <div>
+            <div class="ticket-header">
+              <div class="ticket-tag">
+                <i class="fa-solid fa-terminal"></i> Vista Previa de la Orden
+              </div>
+              <h3 class="ticket-title">Ticket Digital PMIC</h3>
+            </div>
+
+            <!-- Terminal Code Box -->
+            <div id="ticket-preview-content" class="ticket-preview-box">
+              Cargando cotizador...
+            </div>
+
+            <div class="ticket-perks">
+              <div class="ticket-perk-item">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>Diagnóstico profesional en laboratorio propio</span>
+              </div>
+              <div class="ticket-perk-item">
+                <i class="fa-solid fa-shield-halved" style="color: var(--orange-neon);"></i>
+                <span>Garantía de 30 días según Ley 24.240 (Defensa del Consumidor)</span>
+              </div>
+              <div class="ticket-perk-item">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>Todos los medios de pago disponibles (Tarjetas/MP/Transf)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ticket-cta-box">
+            <button id="btn-send-quote-wa" class="btn btn-whatsapp" style="width: 100%; font-size: 1.05rem;">
+              <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> Enviar Cotización a WhatsApp
+            </button>
+            <button id="btn-copy-quote" class="btn btn-secondary" style="width: 100%; font-size: 0.9rem;">
+              <i class="fa-regular fa-copy"></i> Copiar Datos del Ticket
+            </button>
+            <p class="ticket-phone-hint">
+              <i class="fa-solid fa-shield-halved"></i> Contacto directo con taller oficial: <strong>2954274960</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SPECIALTIES & SERVICES
+       ========================================================================== -->
+  <section id="especialidades" class="services-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-tag"><i class="fa-solid fa-screwdriver-wrench"></i> Especialidades Técnicas</span>
+        <h2 class="section-title">Soluciones para cada <span class="text-orange">Dispositivo</span></h2>
+        <p class="section-subtitle">
+          Trabajamos con instrumental de precisión para microelectrónica, diagnóstico por osciloscopio y cámaras térmicas.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- 1. ANDROID -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <i class="fa-brands fa-android"></i>
+          </div>
+          <h3 class="service-title">Celulares Android</h3>
+          <p class="service-description">
+            Reparación integral para Samsung, Motorola, Xiaomi, TCL y todas las marcas líderes con repuestos de alta calidad.
+          </p>
+          <ul class="service-features-list">
+            <li><i class="fa-solid fa-check"></i> Cambio de Módulo de Pantalla AMOLED / LCD</li>
+            <li><i class="fa-solid fa-check"></i> Reemplazo de Baterías de alto rendimiento</li>
+            <li><i class="fa-solid fa-check"></i> Pines de carga Tipo-C & Micro USB</li>
+            <li><i class="fa-solid fa-check"></i> Microelectrónica de placa (IC de carga, backlight)</li>
+            <li><i class="fa-solid fa-check"></i> Tratamiento de equipos mojados por ultrasonido</li>
+          </ul>
+          <a href="#cotizador" class="service-quote-trigger">
+            <span>Cotizar Android</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- 2. IPHONE -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <i class="fa-brands fa-apple"></i>
+          </div>
+          <h3 class="service-title">Apple iPhone</h3>
+          <p class="service-description">
+            Especialistas en la manzana. Desde iPhone 7 hasta los últimos modelos Pro Max, cuidando cada detalle estético y funcional.
+          </p>
+          <ul class="service-features-list">
+            <li><i class="fa-solid fa-check"></i> Pantallas Super Retina XDR OLED originales</li>
+            <li><i class="fa-solid fa-check"></i> Cambio de Baterías sin mensaje de error</li>
+            <li><i class="fa-solid fa-check"></i> Reparación de Tapa Trasera con tecnología láser</li>
+            <li><i class="fa-solid fa-check"></i> Reconstrucción de Face ID & Auriculares</li>
+            <li><i class="fa-solid fa-check"></i> Reparación de placa base y microsoldadura SMD</li>
+          </ul>
+          <a href="#cotizador" class="service-quote-trigger">
+            <span>Cotizar iPhone</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- 3. NOTEBOOKS & PC -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <i class="fa-solid fa-laptop"></i>
+          </div>
+          <h3 class="service-title">Notebooks & PC</h3>
+          <p class="service-description">
+            Tu herramienta de trabajo y estudio en las mejores manos. Hardware, software y optimizaciones extremas de velocidad.
+          </p>
+          <ul class="service-features-list">
+            <li><i class="fa-solid fa-check"></i> Upgrade a Discos SSD NVMe (¡Tu notebook vuela!)</li>
+            <li><i class="fa-solid fa-check"></i> Cambio de pantallas de notebook quebradas</li>
+            <li><i class="fa-solid fa-check"></i> Reparación y reconstrucción de bisagras rotas</li>
+            <li><i class="fa-solid fa-check"></i> Cambio de teclados, cargadores y baterías</li>
+            <li><i class="fa-solid fa-check"></i> Limpieza profunda y cambio de pasta térmica Arctic</li>
+          </ul>
+          <a href="#cotizador" class="service-quote-trigger">
+            <span>Cotizar Notebook</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- 4. PLAYSTATION & CONSOLAS -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <i class="fa-brands fa-playstation"></i>
+          </div>
+          <h3 class="service-title">PlayStation & Consolas</h3>
+          <p class="service-description">
+            Especialistas en consolas de videojuegos PlayStation 4, PlayStation 5, Xbox y Nintendo Switch. ¡Volvé al juego sin lag!
+          </p>
+          <ul class="service-features-list">
+            <li><i class="fa-solid fa-check"></i> Cambio de puerto HDMI original (falla sin señal)</li>
+            <li><i class="fa-solid fa-check"></i> Mantenimiento PS5 con Metal Líquido original</li>
+            <li><i class="fa-solid fa-check"></i> Reparación de fuentes de alimentación internas</li>
+            <li><i class="fa-solid fa-check"></i> Solución a sobrecalentamiento y turbina al 100%</li>
+            <li><i class="fa-solid fa-check"></i> Reparación de Joysticks con Drift (Hall Effect)</li>
+          </ul>
+          <a href="#cotizador" class="service-quote-trigger">
+            <span>Cotizar Consola</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       WHY CHOOSE PMIC (LAB BENEFITS & FLYER EMBED)
+       ========================================================================== -->
+  <section id="por-que-pmic" class="why-section">
+    <div class="container why-grid">
+      <!-- Flyer Showcase Frame -->
+      <div class="why-banner-frame">
+        <img src="assets/pmic-banner.jpg" alt="Flyer Oficial PMIC Reparaciones" class="why-banner-img">
+        <div class="why-badge-floating">
+          <i class="fa-solid fa-medal"></i>
+          <div>
+            <h5>Laboratorio en Santa Rosa</h5>
+            <p>Diagnóstico certero y repuestos garantizados</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Points -->
+      <div class="why-details">
+        <span class="section-tag"><i class="fa-solid fa-microchip"></i> Por Qué Elegirnos</span>
+        <h2 class="section-title">El Respaldo Técnico que <span class="text-orange">Marcá la Diferencia</span></h2>
+        <p class="section-subtitle" style="margin-bottom: 2rem;">
+          En Santa Rosa, La Pampa, somos el laboratorio elegido por usuarios y empresas cuando necesitan una solución definitiva y sin rodeos.
+        </p>
+
+        <div class="features-list">
+          <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-microscope"></i></div>
+            <div class="feature-info">
+              <h3>Instrumental de Microelectrónica</h3>
+              <p>No tercerizamos. Soldamos componentes SMD, reparamos líneas de placa y realizamos diagnósticos con microscopio trinocular en nuestro propio taller.</p>
+            </div>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-stopwatch-20"></i></div>
+            <div class="feature-info">
+              <h3>Reparaciones Express en el Día</h3>
+              <p>Sabemos lo urgente que es tu celular o notebook. Los cambios de pantallas, baterías y pines de carga se resuelven habitualmente en horas.</p>
+            </div>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-shield-check"></i></div>
+            <div class="feature-info">
+              <h3>Garantía Legal de 30 Días (Ley 24.240)</h3>
+              <p>Toda reparación efectuada cuenta con una garantía de 30 días según la Ley 24.240 de Defensa del Consumidor, contados desde la fecha de aviso de reparado, con Orden de Reparación oficial.</p>
+            </div>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-user-shield"></i></div>
+            <div class="feature-info">
+              <h3>Privacidad Absoluta de tus Datos</h3>
+              <p>Tus fotos, chats y archivos privados están seguros. Cumplimos con estrictas normas de confidencialidad en cada equipo ingresado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       WORKFLOW PROCESS (4 STEPS)
+       ========================================================================== -->
+  <section class="steps-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-tag"><i class="fa-solid fa-diagram-project"></i> Proceso Simple & Transparente</span>
+        <h2 class="section-title">Cómo Reparamos <span class="text-orange">tu Dispositivo</span></h2>
+        <p class="section-subtitle">
+          Un circuito ágil y confiable desde que nos contactás hasta que volvés a disfrutar de tu equipo.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-badge">PASO 01</div>
+          <div class="step-icon-wrap"><i class="fa-brands fa-whatsapp"></i></div>
+          <h3 class="step-title">Cotizás Online</h3>
+          <p class="step-desc">Usás nuestro cotizador o nos escribís al WhatsApp indicando modelo y problema para recibir una orientación inmediata.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-badge">PASO 02</div>
+          <div class="step-icon-wrap"><i class="fa-solid fa-laptop-medical"></i></div>
+          <h3 class="step-title">Recepción & Chequeo</h3>
+          <p class="step-desc">Acercás tu equipo a nuestro taller en Santa Rosa o coordinamos envío. Ingresa con orden y diagnóstico exhaustivo.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-badge">PASO 03</div>
+          <div class="step-icon-wrap"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+          <h3 class="step-title">Reparación en Lab</h3>
+          <p class="step-desc">Con tu aprobación, nuestros técnicos intervienen el equipo utilizando repuestos testeados y tecnología de vanguardia.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-badge">PASO 04</div>
+          <div class="step-icon-wrap"><i class="fa-solid fa-circle-check"></i></div>
+          <h3 class="step-title">Entrega con Garantía</h3>
+          <p class="step-desc">Te avisamos ni bien está listo. Probás todas las funciones y te lo llevás con garantía legal de 30 días según Ley 24.240 y tu Orden de Reparación©.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PAYMENT METHODS SECTION (EXACT FLYER REPLICATION)
+       ========================================================================== -->
+  <section id="medios-pago" class="payments-section">
+    <div class="container">
+      <div class="payment-card-showcase">
+        <div class="payment-title-tag">ACEPTAMOS</div>
+        <h2 class="payment-headline">TODOS <span>LOS MEDIOS</span> DE PAGO</h2>
+
+        <!-- Interactive Badges with Exact Logos from Banner -->
+        <div class="payment-badges-row">
+          <div class="payment-badge">
+            <i class="fa-brands fa-cc-visa badge-visa"></i>
+            <span>VISA</span>
+          </div>
+          <div class="payment-badge">
+            <i class="fa-brands fa-cc-mastercard badge-mc"></i>
+            <span>MasterCard</span>
+          </div>
+          <div class="payment-badge">
+            <i class="fa-brands fa-cc-amex badge-amex"></i>
+            <span>AMEX</span>
+          </div>
+          <div class="payment-badge">
+            <i class="fa-solid fa-credit-card badge-naranja"></i>
+            <span>Tarjeta Naranja</span>
+          </div>
+          <div class="payment-badge">
+            <i class="fa-solid fa-handshake-angle badge-mp"></i>
+            <span>Mercado Pago</span>
+          </div>
+          <div class="payment-badge">
+            <i class="fa-solid fa-building-columns badge-transf"></i>
+            <span>Transferencia</span>
+          </div>
+        </div>
+
+        <!-- Embedded Graphic from the Official Flyer for Authenticity -->
+        <div class="payment-crop-frame">
+          <img src="assets/payment-methods.png" alt="Aceptamos todos los medios de pago: Visa, Mastercard, American Express, Naranja, Mercado Pago, Transferencia" class="payment-crop-img">
+        </div>
+
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 1.5rem;">
+          Consultá por opciones de cuotas, transferencias directas sin recargo y promociones vigentes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       WARRANTY & LEGAL TERMS SECTION (LEY 24.240)
+       ========================================================================== -->
+  <section id="garantia" class="warranty-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-tag"><i class="fa-solid fa-scale-balanced"></i> Marco Legal • Ley 24.240</span>
+        <h2 class="section-title">Garantía Oficial <span class="text-orange">de 30 Días</span></h2>
+        <p class="section-subtitle">
+          En PMIC Reparaciones trabajamos con total claridad, seriedad y apego a la normativa vigente de Defensa del Consumidor.
+        </p>
+      </div>
+
+      <div class="warranty-card-main">
+        <div class="warranty-header-row">
+          <div class="warranty-header-left">
+            <div class="warranty-shield-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="warranty-header-text">
+              <h3>Términos y Condiciones de Garantía</h3>
+              <span>Ley 24.240 // Defensa del Consumidor</span>
+            </div>
+          </div>
+          <div class="warranty-stamp-badge">
+            <i class="fa-solid fa-certificate"></i> Cobertura Legal: 30 Días
+          </div>
+        </div>
+
+        <!-- Box with the Exact Legal Text -->
+        <div class="warranty-legal-quote-box">
+          <i class="fa-solid fa-gavel warranty-quote-watermark"></i>
+          <p class="warranty-legal-text">
+            “Toda reparación efectuada tiene una garantía de 30 días según ley 24.240 (Defensa del Consumidor), contados desde la fecha de aviso de reparado, quedando excluidas las fallas por: mala manipulación, roturas o golpes, sobretensión o evidencia de residuos líquidos, humedad, o si el dispositivo fue intervenido por un tercero. Los dispositivos que ingresan mojados, no son sujetos a garantía. Las reparaciones de software carecen de garantía por la cantidad de virus que existen en internet, opciones de configuración y/o apps instalables, como también por el uso que se le dará. Toda garantía queda en potestad del servicio técnico darle efecto a la misma, tras revisión mínima de 48hs; siempre y cuando se presente talón de la Orden de Reparación© previa y/o boletas de pagos.”
+          </p>
+        </div>
+
+        <!-- Key Points Breakdown for User Clarity -->
+        <div class="warranty-key-points-grid">
+          <div class="warranty-point-item">
+            <i class="fa-solid fa-calendar-check"></i>
+            <div class="warranty-point-text">
+              <h5>Plazo de 30 Días</h5>
+              <p>El período de cobertura rige desde el momento exacto en que se notifica que el equipo se encuentra reparado.</p>
+            </div>
+          </div>
+
+          <div class="warranty-point-item">
+            <i class="fa-solid fa-ban"></i>
+            <div class="warranty-point-text">
+              <h5>Exclusiones por Daño</h5>
+              <p>Quedan excluidas roturas, golpes, caídas, sobretensión, humedad o intervención técnica por terceros ajenos al taller.</p>
+            </div>
+          </div>
+
+          <div class="warranty-point-item">
+            <i class="fa-solid fa-droplet-slash"></i>
+            <div class="warranty-point-text">
+              <h5>Equipos Mojados</h5>
+              <p>Los equipos que ingresan con ingreso de líquidos o sulfato no son sujetos a garantía por riesgo de daño progresivo.</p>
+            </div>
+          </div>
+
+          <div class="warranty-point-item">
+            <i class="fa-solid fa-compact-disc"></i>
+            <div class="warranty-point-text">
+              <h5>Software y Sistema</h5>
+              <p>Las reparaciones de software no poseen garantía debido a virus, configuraciones y aplicaciones instaladas externamente.</p>
+            </div>
+          </div>
+
+          <div class="warranty-point-item">
+            <i class="fa-solid fa-receipt"></i>
+            <div class="warranty-point-text">
+              <h5>Comprobante Obligatorio</h5>
+              <p>Para hacerla efectiva es requisito presentar talón de la Orden de Reparación© previa o boleta de pago (revisión mín. 48 hs).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FAQ ACCORDION
+       ========================================================================== -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-tag"><i class="fa-solid fa-circle-question"></i> Respuestas Claras</span>
+        <h2 class="section-title">Preguntas <span class="text-orange">Frecuentes</span></h2>
+        <p class="section-subtitle">
+          Todo lo que necesitás saber antes de traer o enviar tu equipo a PMIC Reparaciones.
+        </p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>¿Cuánto demora una reparación comúnmente?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Las reparaciones habituales como cambio de módulo/pantalla, cambio de batería o pin de carga para celulares y notebooks se realizan en el mismo día (muchas veces en 2 a 4 horas si el repuesto está en stock). Reparaciones de microelectrónica compleja o placas mojadas demoran habitualmente entre 24 y 48 horas de diagnóstico.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Se borra la información de mi teléfono o computadora?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>¡No! En reparaciones de hardware (cambio de pantalla, batería, pines, bisagras, HDMI de consolas) tu información personal, fotos, WhatsApp y documentos permanecen intactos. Si el servicio requiere formateo o reinstalación de sistema operativo, siempre te avisamos previamente para respaldar tus datos.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Qué garantía ofrecen en sus trabajos según la ley?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Toda reparación efectuada tiene una <strong>garantía de 30 días según ley 24.240 (Defensa del Consumidor)</strong>, contados desde la fecha de aviso de reparado. Quedan excluidas las fallas por: mala manipulación, roturas o golpes, sobretensión o evidencia de residuos líquidos, humedad, o si el dispositivo fue intervenido por un tercero. Los dispositivos que ingresan mojados, no son sujetos a garantía. Las reparaciones de software carecen de garantía por virus, configuraciones y/o apps instalables. Toda garantía queda en potestad del servicio técnico darle efecto tras revisión mínima de 48hs, presentando talón de la Orden de Reparación© previa y/o boleta de pago.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Qué debo hacer si mi equipo se cayó al agua o se mojó?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>¡Apagalo inmediatamente y NO lo conectes al cargador! Tampoco uses arroz (genera más sulfato). Traelo lo antes posible a nuestro laboratorio para realizar un desarmado completo y limpieza por batea de ultrasonido con alcohol isopropílico para frenar la corrosión.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Reciben equipos de otras localidades de La Pampa?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Sí, recibimos equipos de General Pico, Toay, Realicó, 25 de Mayo, Victorica y toda la provincia mediante comisionistas o encomiendas. Coordinamos la recepción por WhatsApp y te enviamos fotos del proceso técnico.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT & LOCATION (SANTA ROSA, LA PAMPA)
+       ========================================================================== -->
+  <section id="contacto" class="contact-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-tag"><i class="fa-solid fa-location-dot"></i> Punto de Atención</span>
+        <h2 class="section-title">Estamos en <span class="text-orange">Santa Rosa, La Pampa</span></h2>
+        <p class="section-subtitle">
+          Contactanos por WhatsApp o acercate a nuestro taller. Te asesoramos con la mejor predisposición técnica.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Information Box -->
+        <div class="contact-card-info">
+          <div>
+            <span class="section-tag"><i class="fa-solid fa-headset"></i> Canal Directo</span>
+            <h3 style="font-family: var(--font-heading); font-size: 1.8rem; color: #fff; margin: 0.5rem 0 1rem; text-transform: uppercase;">
+              PMIC Reparaciones Oficial
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Comunicate con nosotros para coordinar la entrega de tu celular, notebook o consola, o para consultar stock de repuestos en tiempo real.
+            </p>
+
+            <div class="contact-info-list">
+              <!-- WhatsApp -->
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                <div class="contact-info-text">
+                  <h4>WhatsApp Oficial</h4>
+                  <a href="https://wa.me/5492954274960?text=Hola%20PMIC%20Reparaciones!%20Quiero%20hacer%20una%20consulta." target="_blank">
+                    <strong>2954 274960</strong> (+54 9 2954 27-4960)
+                  </a>
+                </div>
+              </div>
+
+              <!-- Location -->
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="fa-solid fa-location-crosshairs"></i></div>
+                <div class="contact-info-text">
+                  <h4>Dirección del Laboratorio</h4>
+                  <p><strong>Av. Circunvalación Ing Marzo Sur 1587</strong><br>L6300GUC Santa Rosa, La Pampa, Argentina</p>
+                  <a href="https://maps.google.com/?q=-36.64026860665512,-64.290792" target="_blank" style="color: var(--orange-neon); font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 0.4rem; text-decoration: none;">
+                    <i class="fa-solid fa-diamond-turn-right"></i> Abrir en Google Maps <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Hours -->
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="fa-solid fa-clock"></i></div>
+                <div class="contact-info-text">
+                  <h4>Horarios de Laboratorio</h4>
+                  <p>Lunes a Viernes: 09:00 - 17:00 hs<br>Sábados: 10:00 - 16:00 hs</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5492954274960?text=Hola%20PMIC%20Reparaciones!%20Quiero%20coordinar%20una%20reparaci%C3%B3n." target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+            <i class="fa-brands fa-whatsapp"></i> Iniciar Chat en WhatsApp
+          </a>
+        </div>
+
+        <!-- Styled Dark Map -->
+        <div class="map-card-wrapper">
+          <div class="map-header">
+            <div>
+              <h4><i class="fa-solid fa-map-location-dot" style="color: var(--orange-neon); margin-right: 0.5rem;"></i> PMIC Reparaciones</h4>
+              <span style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-top: 0.2rem;">Av. Circunvalación Ing Marzo Sur 1587, Santa Rosa</span>
+            </div>
+            <a href="https://maps.google.com/?q=-36.64026860665512,-64.290792" target="_blank" class="status-pill" style="text-decoration: none;" title="Abrir en Google Maps">
+              <span class="status-dot"></span> Ver en Maps
+            </a>
+          </div>
+          <div class="map-iframe-container">
+            <iframe 
+              title="Ubicación PMIC Reparaciones - Av. Circunvalación Ing Marzo Sur 1587, L6300GUC Santa Rosa, La Pampa"
+              src="https://maps.google.com/maps?q=-36.64026860665512,-64.290792+(PMIC+Reparaciones+-+Av.+Circunvalaci%C3%B3n+Ing+Marzo+Sur+1587)&t=&z=19&ie=UTF8&iwloc=B&output=embed"
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;">
+            <img src="assets/chip-logo-clean.png" alt="PMIC Chip" style="width: 44px; height: 44px; border-radius: 8px; border: 1px solid var(--orange-neon);">
+            <img src="assets/pmic-brand-clean.png" alt="PMIC Reparaciones" style="height: 28px; width: auto;">
+          </div>
+          <p>
+            Laboratorio de microelectrónica y reparación de dispositivos móviles, computadoras y consolas de videojuegos en Santa Rosa, La Pampa.
+          </p>
+          <div style="margin-top: 1rem; color: var(--orange-light); font-size: 0.85rem; font-family: var(--font-heading); letter-spacing: 0.8px; display: flex; flex-direction: column; gap: 0.35rem;">
+            <div><i class="fa-solid fa-location-dot"></i> Av. Circunvalación Ing Marzo Sur 1587, Santa Rosa</div>
+            <div><i class="fa-regular fa-clock"></i> Lun a Vie: 09:00 - 17:00 hs | Sáb: 10:00 - 16:00 hs</div>
+            <div><i class="fa-brands fa-whatsapp"></i> WhatsApp: 2954274960</div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Especialidades</h4>
+          <ul class="footer-links-list">
+            <li><a href="#especialidades">Módulos & Pantallas Celular</a></li>
+            <li><a href="#especialidades">Baterías Originales</a></li>
+            <li><a href="#especialidades">Reparación de Notebooks & SSD</a></li>
+            <li><a href="#especialidades">PlayStation HDMI & Pasta Térmica</a></li>
+            <li><a href="#especialidades">Microsoldadura de Placas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegación Rápida</h4>
+          <ul class="footer-links-list">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#cotizador">Cotizador a WhatsApp</a></li>
+            <li><a href="#por-que-pmic">Por Qué PMIC</a></li>
+            <li><a href="#medios-pago">Medios de Pago</a></li>
+            <li><a href="#garantia">Garantía Legal (Ley 24.240)</a></li>
+            <li><a href="#contacto">Santa Rosa, La Pampa</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="current-year">2026</span> <strong>PMIC Reparaciones</strong>. Todos los derechos reservados. Santa Rosa, La Pampa.
+        </div>
+        <div style="font-size: 0.8rem; color: var(--text-dark);">
+          Diseño Dark Mode Tecno // Optimizado para Móviles & Computadoras
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       FLOATING WHATSAPP BUTTON & QUICK CHAT POPUP
+       ========================================================================== -->
+  <div class="floating-whatsapp-wrap">
+    <!-- Quick Interactive Popup Dialog -->
+    <div id="whatsapp-quick-popup" class="whatsapp-quick-popup" role="dialog" aria-label="Chat rápido con PMIC">
+      <div class="popup-header">
+        <div class="popup-header-user">
+          <img src="assets/chip-logo-clean.png" alt="PMIC Avatar" class="popup-avatar">
+          <div class="popup-user-info">
+            <h5>PMIC Soporte</h5>
+            <span>🟢 En línea ahora</span>
+          </div>
+        </div>
+        <button id="whatsapp-popup-close" class="popup-close-btn" aria-label="Cerrar chat">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="popup-body">
+        <div class="popup-chat-bubble">
+          ¡Hola! 👋 ¿Tu celular, notebook o consola tiene alguna falla?<br><br>
+          Escribinos directamente al <strong>2954274960</strong> o usá el cotizador de la web para presupuesto inmediato.
+        </div>
+        <input type="text" id="whatsapp-quick-input" class="form-input" placeholder="Escribí tu consulta aquí..." style="font-size: 0.85rem; padding: 0.65rem 0.8rem;">
+      </div>
+
+      <div class="popup-footer">
+        <button id="whatsapp-popup-send" class="btn btn-whatsapp" style="width: 100%; padding: 0.65rem 1rem; font-size: 0.88rem;">
+          <i class="fa-brands fa-whatsapp"></i> Chatear con Soporte
+        </button>
+      </div>
+    </div>
+
+    <!-- Pulsing Radar Trigger Button -->
+    <button id="whatsapp-radar-btn" class="whatsapp-radar-btn" aria-label="Contactar a PMIC por WhatsApp" title="Chatear por WhatsApp (2954274960)">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="whatsapp-badge-notification">1</span>
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script>
+    document.getElementById('current-year').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>
