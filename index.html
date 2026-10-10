@@ -4,36 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PMIC Reparaciones - Servicio Técnico Especializado</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #ff6b00;
+            --dark: #121212;
+            --card-bg: #1e1e1e;
+            --text: #ffffff;
+            --text-muted: #aaaaaa;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--dark); color: var(--text); line-height: 1.6; }
+        
+        header { background: #000; display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; border-bottom: 2px solid var(--primary); }
+        .logo { display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 1.2rem; color: var(--primary); }
+        .logo img { height: 40px; border-radius: 5px; }
+        nav a { color: var(--text); text-decoration: none; margin-left: 20px; transition: 0.3s; }
+        nav a:hover { color: var(--primary); }
+
+        .hero { text-align: center; padding: 60px 20px; background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, var(--dark) 100%); }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; color: var(--primary); }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 25px; color: var(--text-muted); }
+        
+        .btn-primary { display: inline-block; background: #25d366; color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.1rem; }
+        .btn-primary i { margin-right: 8px; }
+
+        section { padding: 50px 5%; max-width: 1200px; margin: 0 auto; }
+        h2 { text-align: center; margin-bottom: 30px; font-size: 2rem; border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 5px; }
+        .section-title-wrapper { text-align: center; }
+
+        .services-grid, .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .service-card, .review-card { background: var(--card-bg); padding: 25px; border-radius: 10px; border-left: 4px solid var(--primary); }
+        .service-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+        .service-card h3 { margin-bottom: 10px; }
+
+        .stars { color: #f39c12; font-size: 1.2rem; margin-bottom: 10px; }
+        .review-card span { display: block; margin-top: 15px; color: var(--text-muted); font-size: 0.9rem; font-style: italic; }
+
+        .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .contact-info p, .contact-info ul { margin-bottom: 15px; }
+        .contact-info ul { list-style: none; padding-left: 10px; }
+        .social-links { margin-top: 20px; }
+        .social-links a { display: inline-block; color: var(--text); font-size: 1.5rem; margin-right: 15px; transition: 0.3s; }
+        .social-links a:hover { color: var(--primary); }
+
+        .map-container iframe { border-radius: 10px; }
+
+        footer { text-align: center; padding: 20px; background: #000; color: var(--text-muted); border-top: 1px solid #333; margin-top: 40px; }
+    </style>
 </head>
 <body>
 
-    <!-- Encabezado / Menú -->
     <header>
         <div class="logo">
-            <img src="assets/chip-logo-clean.png" alt="PMIC Reparaciones Logo">
+            <i class="fas fa-microchip"></i>
             <span>PMIC REPARACIONES</span>
         </div>
         <nav>
             <a href="#servicios">Servicios</a>
-            <a href="#nosotros">Laboratorio</a>
             <a href="#opiniones">Opiniones</a>
             <a href="#garantia">Garantía</a>
             <a href="#contacto">Contacto</a>
         </nav>
     </header>
 
-    <!-- Banner Principal -->
     <section class="hero">
         <h1>Soporte Técnico Especializado en Santa Rosa</h1>
         <p>Microsoldadura y diagnóstico avanzado de placas para Celulares, Notebooks y Consolas.</p>
         <a href="https://wa.me/2954274960" class="btn-primary" target="_blank"><i class="fab fa-whatsapp"></i> Consultar por WhatsApp</a>
     </section>
 
-    <!-- Directorio de Servicios Destacados -->
-    <section id="servicios" class="services-section">
-        <h2>Nuestros Servicios Especializados</h2>
+    <section id="servicios">
+        <div class="section-title-wrapper">
+            <h2>Nuestros Servicios Especializados</h2>
+        </div>
         <div class="services-grid">
             <div class="service-card">
                 <i class="fas fa-mobile-alt service-icon"></i>
@@ -53,20 +97,10 @@
         </div>
     </section>
 
-    <!-- Galería / Trabajos Reales -->
-    <section class="gallery-section">
-        <h2>Laboratorio & Reparaciones</h2>
-        <p>Trabajos reales de microsoldadura y banco de pruebas.</p>
-        <div class="gallery-grid">
-            <img src="assets/pmic-banner.jpg" alt="Banco de trabajo PMIC">
-            <img src="assets/frustrated-tech.png" alt="Diagnostico de placas">
-            <img src="assets/chip-logo.png" alt="Componentes PMIC">
+    <section id="opiniones">
+        <div class="section-title-wrapper">
+            <h2>Lo que dicen nuestros clientes</h2>
         </div>
-    </section>
-
-    <!-- Reseñas / Opiniones de Clientes -->
-    <section id="opiniones" class="reviews-section">
-        <h2>Lo que dicen nuestros clientes</h2>
         <div class="reviews-grid">
             <div class="review-card">
                 <div class="stars">★★★★★</div>
@@ -86,41 +120,43 @@
         </div>
     </section>
 
-    <!-- Políticas de Garantía -->
-    <section id="garantia" class="warranty-section">
-        <h2>Políticas de Garantía Escrita</h2>
-        <p>Todas nuestras reparaciones físicas cuentan con <strong>30 días de garantía escrita</strong> conforme a la Ley de Defensa del Consumidor N° 24.240.</p>
-        <p class="small-text">*La garantía aplica exclusivamente sobre el componente reparado o reemplazado. Quedan excluidos equipos que presenten humedad o líquidos, daños por caídas posteriores, fallas de software o intervención por terceros no autorizados.</p>
+    <section id="garantia">
+        <div class="section-title-wrapper">
+            <h2>Garantía Escrita</h2>
+        </div>
+        <div class="service-card">
+            <p>Todas nuestras reparaciones físicas cuentan con <strong>30 días de garantía escrita</strong> conforme a la Ley de Defensa del Consumidor N° 24.240.</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">*La garantía aplica sobre el componente reparado o reemplazado. Excluye equipos mojados con posterioridad, golpes o intervención técnica ajena.</p>
+        </div>
     </section>
 
-    <!-- Ubicación, Horarios y Redes -->
-    <section id="contacto" class="contact-section">
-        <h2>Contacto y Ubicación</h2>
+    <section id="contacto">
+        <div class="section-title-wrapper">
+            <h2>Ubicación y Horarios</h2>
+        </div>
         <div class="contact-container">
             <div class="contact-info">
-                <p><strong><i class="fas fa-map-marker-alt"></i> Dirección:</strong> Avenida Circunvalación Ingeniero Marzo Sur 1587, Santa Rosa, La Pampa[cite: 10]</p>
-                <p><strong><i class="fas fa-clock"></i> Horarios:</strong></p>
+                <p><strong><i class="fas fa-map-marker-alt"></i> Dirección:</strong> Av. Circunvalación Ing. Marzo Sur 1587, Santa Rosa, La Pampa[cite: 11]</p>
+                <p><strong><i class="fas fa-clock"></i> Horarios de Laboratorio:</strong></p>
                 <ul>
-                    <li>Lunes a Viernes: 09:00 - 18:00 hs[cite: 10]</li>
-                    <li>Sábados: 10:00 - 14:00 hs[cite: 10]</li>
+                    <li>• Lunes a Viernes: 09:00 a 18:00 hs[cite: 11]</li>
+                    <li>• Sábados: 10:00 a 14:00 hs[cite: 11]</li>
                 </ul>
-                <p><strong><i class="fab fa-whatsapp"></i> WhatsApp:</strong> 02954 27-4960[cite: 10]</p>
+                <p><strong><i class="fab fa-whatsapp"></i> WhatsApp:</strong> 02954 27-4960[cite: 11]</p>
                 
-                <!-- Redes Sociales Oficiales -->
                 <div class="social-links">
-                    <h3>Síguenos en nuestras redes</h3>
-                    <a href="https://www.instagram.com/pmicreparaciones/" target="_blank"><i class="fab fa-instagram"></i> Instagram[cite: 10]</a>
-                    <a href="https://www.facebook.com/chelo.pmic/" target="_blank"><i class="fab fa-facebook"></i> Facebook[cite: 10]</a>
-                    <a href="https://www.tiktok.com/@chelo.pmic" target="_blank"><i class="fab fa-tiktok"></i> TikTok[cite: 10]</a>
+                    <h3>Redes Oficiales:</h3>
+                    <a href="https://www.instagram.com/pmicreparaciones/" target="_blank"><i class="fab fa-instagram"></i></a>[cite: 11]
+                    <a href="https://www.facebook.com/chelo.pmic/" target="_blank"><i class="fab fa-facebook"></i></a>[cite: 11]
+                    <a href="https://www.tiktok.com/@chelo.pmic" target="_blank"><i class="fab fa-tiktok"></i></a>[cite: 11]
                 </div>
             </div>
 
-            <!-- Mapa Integrado con Ubicación Exacta -->
             <div class="map-container">
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3202.392348574912!2d-64.2882!3d-36.6215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c2cd1d6d5678cd%3A0x8e8787f7b3286481!2sAv.%20Circunvalaci%C3%B3n%20Ing%20Marzo%20Sur%201587%2C%20L6300GUC%20Santa%20Rosa%2C%20La%20Pampa!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar" 
                     width="100%" 
-                    height="300" 
+                    height="280" 
                     style="border:0;" 
                     allowfullscreen="" 
                     loading="lazy">
@@ -130,7 +166,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 PMIC Reparaciones - Todos los derechos reservados.</p>
+        <p>&copy; 2026 PMIC Reparaciones - Santa Rosa, La Pampa.</p>
     </footer>
 
 </body>
