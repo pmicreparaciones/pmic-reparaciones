@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMIC Reparaciones | Servicio Técnico Especializado en Santa Rosa</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#FF5500',
+                            orangeHover: '#E04B00',
+                            orangeLight: '#FF8800',
+                            dark: '#0B0D11',
+                            card: '#12151D',
+                            border: '#232836'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #08090C;
+            color: #F3F4F6;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Tech Circuit Pattern Background */
+        .bg-tech-pattern {
+            background-color: #08090C;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(255, 85, 0, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 100% 100%, rgba(255, 85, 0, 0.08) 0%, transparent 40%),
+                linear-gradient(to right, rgba(255, 85, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 85, 0, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+        }
+
+        .glow-orange {
+            box-shadow: 0 0 30px rgba(255, 85, 0, 0.35);
+        }
+
+        .glow-orange-sm {
+            box-shadow: 0 0 15px rgba(255, 85, 0, 0.25);
+        }
+
+        .gradient-orange-text {
+            background: linear-gradient(135deg, #FF8800 0%, #FF3300 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-orange-bg {
+            background: linear-gradient(135deg, #FF7700 0%, #FF3300 100%);
+        }
+
+        /* Metallic chrome effect for logo typography */
+        .silver-text {
+            background: linear-gradient(180deg, #FFFFFF 0%, #B0B7C3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .chip-logo-shape {
+            clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);
+        }
+    </style>
+</head>
+<body class="bg-tech-pattern antialiased selection:bg-orange-500 selection:text-white min-h-screen flex flex-col justify-between">
+
+    <header class="sticky top-0 z-50 bg-[#08090C]/90 backdrop-blur-md border-b border-brand-border/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <!-- Chip Isotype -->
+                <div class="relative w-11 h-11 bg-gradient-to-br from-orange-500 to-amber-600 rounded-lg p-[2px] shadow-lg glow-orange-sm group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full bg-[#0d0f14] rounded-[6px] flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-orange-500/10"></div>
+                        <span class="font-heading font-black text-2xl tracking-tighter text-orange-500 italic">R</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-xl font-heading font-black tracking-wider silver-text block leading-none">PMIC</span>
+                    <span class="text-xs font-heading font-bold text-orange-500 tracking-widest uppercase block mt-1">REPARACIONES</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold tracking-wide text-slate-300">
+                <a href="#inicio" class="hover:text-orange-400 transition-colors">Inicio</a>
+                <a href="#servicios" class="hover:text-orange-400 transition-colors">Servicios</a>
+                <a href="#cotizador" class="hover:text-orange-400 transition-colors">Cotizador Rápido</a>
+                <a href="#medios-pago" class="hover:text-orange-400 transition-colors">Medios de Pago</a>
+                <a href="#contacto" class="hover:text-orange-400 transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="https://wa.me/2954274960?text=Hola%20PMIC%20Reparaciones!%20Quisiera%20hacer%20una%20consulta" 
+                   target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-2 gradient-orange-bg text-black font-extrabold text-sm px-5 py-2.5 rounded-xl shadow-lg glow-orange-sm hover:brightness-110 active:scale-95 transition-all">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Escribinos al WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="lg:hidden text-slate-300 hover:text-orange-500 text-2xl focus:outline-none" aria-label="Abrir Menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-card border-b border-brand-border px-4 py-6 space-y-3">
+            <a href="#inicio" class="block px-4 py-2.5 rounded-lg text-slate-200 hover:bg-orange-500/10 hover:text-orange-400 font-semibold">Inicio</a>
+            <a href="#servicios" class="block px-4 py-2.5 rounded-lg text-slate-200 hover:bg-orange-500/10 hover:text-orange-400 font-semibold">Servicios Especializados</a>
+            <a href="#cotizador" class="block px-4 py-2.5 rounded-lg text-slate-200 hover:bg-orange-500/10 hover:text-orange-400 font-semibold">Cotizador Rápido</a>
+            <a href="#medios-pago" class="block px-4 py-2.5 rounded-lg text-slate-200 hover:bg-orange-500/10 hover:text-orange-400 font-semibold">Medios de Pago</a>
+            <a href="#contacto" class="block px-4 py-2.5 rounded-lg text-slate-200 hover:bg-orange-500/10 hover:text-orange-400 font-semibold">Ubicación y Horarios</a>
+            <a href="https://wa.me/2954274960?text=Hola%20PMIC%20Reparaciones!%20Quisiera%20hacer%20una%20consulta" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 gradient-orange-bg text-black font-extrabold px-4 py-3 rounded-xl w-full mt-2">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Enviar WhatsApp Directo</span>
+            </a>
+        </div>
+    </header>
+
+    <section id="inicio" class="relative pt-10 pb-20 lg:pt-20 lg:pb-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Main Text Header -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-950/40 border border-orange-500/40 text-orange-400 text-xs font-mono font-bold tracking-wide uppercase">
+                        <i class="fa-solid fa-microchip animate-pulse text-orange-500"></i>
+                        Santa Rosa, La Pampa
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl font-heading font-black text-white tracking-tight uppercase leading-none">
+                        SERVICIO <br>
+                        <span class="gradient-orange-text">TÉCNICO</span>
+                    </h1>
+
+                    <p class="text-xl font-heading font-bold text-slate-200 tracking-wide">
+                        DIAGNÓSTICO AVANZADO & MICROSOLDADURA EN PLACAS
+                    </p>
+
+                    <p class="text-base text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Solución definitiva para fallas complejas en celulares, notebooks y consolas de videojuegos. Equipamiento de laboratorio microscópico para reparaciones de nivel componente.
+                    </p>
+
+                    <!-- Platform Icons Banner from Flyer -->
+                    <div class="py-4">
+                        <div class="text-xs font-mono text-slate-400 uppercase tracking-widest mb-3">Plataformas Atendidas:</div>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-lg mx-auto lg:mx-0">
+                            <!-- Android -->
+                            <div class="bg-brand-card/90 border border-brand-border p-3 rounded-xl flex items-center justify-center gap-2 hover:border-orange-500/50 transition-all">
+                                <i class="fa-brands fa-android text-2xl text-emerald-400"></i>
+                                <span class="text-xs font-bold text-white uppercase font-heading">Android</span>
+                            </div>
+                            <!-- iPhone -->
+                            <div class="bg-brand-card/90 border border-brand-border p-3 rounded-xl flex items-center justify-center gap-2 hover:border-orange-500/50 transition-all">
+                                <i class="fa-brands fa-apple text-2xl text-slate-200"></i>
+                                <span class="text-xs font-bold text-white uppercase font-heading">iPhone</span>
+                            </div>
+                            <!-- Notebook -->
+                            <div class="bg-brand-card/90 border border-brand-border p-3 rounded-xl flex items-center justify-center gap-2 hover:border-orange-500/50 transition-all">
+                                <i class="fa-solid fa-laptop text-2xl text-cyan-400"></i>
+                                <span class="text-xs font-bold text-white uppercase font-heading">Notebook</span>
+                            </div>
+                            <!-- PlayStation -->
+                            <div class="bg-brand-card/90 border border-brand-border p-3 rounded-xl flex items-center justify-center gap-2 hover:border-orange-500/50 transition-all">
+                                <i class="fa-brands fa-playstation text-2xl text-indigo-400"></i>
+                                <span class="text-xs font-bold text-white uppercase font-heading">PlayStation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#cotizador" class="w-full sm:w-auto flex items-center justify-center gap-3 gradient-orange-bg text-black font-extrabold px-8 py-4 rounded-xl text-base shadow-lg glow-orange hover:brightness-110 active:scale-95 transition-all">
+                            <i class="fa-solid fa-calculator text-lg"></i>
+                            <span>Cotizar Reparación</span>
+                        </a>
+                        <a href="https://wa.me/2954274960?text=Hola%20PMIC%20Reparaciones!%20Quisiera%20hacer%20una%20consulta" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex items-center justify-center gap-3 bg-brand-card hover:bg-slate-800 text-white border border-brand-border font-bold px-8 py-4 rounded-xl text-base transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+                            <span>WhatsApp Directo</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Flyer Replica Visual -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="w-full max-w-md bg-brand-card rounded-3xl p-6 border-2 border-orange-500/30 shadow-2xl relative glow-orange-sm">
+                        
+                        <!-- Isotype Processor Badge -->
+                        <div class="flex flex-col items-center text-center space-y-4 py-4 border-b border-brand-border">
+                            <div class="w-24 h-24 bg-gradient-to-br from-orange-500 via-amber-600 to-orange-700 p-1 rounded-2xl glow-orange">
+                                <div class="w-full h-full bg-[#0a0d12] rounded-xl flex items-center justify-center relative">
+                                    <!-- Circuit tracks visual -->
+                                    <div class="absolute inset-1 border border-orange-500/20 rounded-lg"></div>
+                                    <span class="font-heading font-black text-5xl text-orange-500 italic">R</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-2xl font-heading font-black tracking-widest silver-text">PMIC</span>
+                                <span class="text-xs font-heading font-bold text-orange-500 tracking-widest block uppercase">REPARACIONES</span>
+                            </div>
+                        </div>
+
+                        <!-- Stats Highlights -->
+                        <div class="py-6 space-y-3">
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-950 border border-brand-border">
+                                <span class="text-xs text-slate-300 font-semibold"><i class="fa-solid fa-microchip text-orange-500 mr-2"></i>Especialidad PMIC</span>
+                                <span class="text-xs text-orange-400 font-mono font-bold">Microsoldadura</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-950 border border-brand-border">
+                                <span class="text-xs text-slate-300 font-semibold"><i class="fa-solid fa-star text-amber-400 mr-2"></i>Calificación Google</span>
+                                <span class="text-xs text-amber-400 font-bold">5.0 ★ (103 Opiniones)</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-950 border border-brand-border">
+                                <span class="text-xs text-slate-300 font-semibold"><i class="fa-solid fa-location-dot text-orange-500 mr-2"></i>Ubicación</span>
+                                <span class="text-xs text-slate-300 font-mono">Av. Circunvalación 1587</span>
+                            </div>
+                        </div>
+
+                        <div class="text-center pt-2">
+                            <a href="https://wa.me/2954274960" target="_blank" class="text-xs font-mono font-bold text-orange-400 hover:underline">
+                                📞 02954 27-4960 - Santa Rosa, La Pampa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-20 bg-[#06070a] border-t border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-mono font-bold text-orange-500 uppercase tracking-widest">Nuestra Especialidad</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-black text-white mt-2 uppercase">Servicios Técnicos Especializados</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-orange-500 to-amber-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Celulares (Android & iPhone) -->
+                <div class="bg-brand-card p-6 rounded-2xl border border-brand-border hover:border-orange-500/60 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-950/50 border border-orange-500/30 flex items-center justify-center text-orange-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-white mb-2">Celulares (Android & iPhone)</h3>
+                    <p class="text-slate-400 text-sm mb-4">Reparación integral de pantallas, módulos, táctiles y baterías para todas las marcas.</p>
+                    <ul class="space-y-2 text-xs text-slate-300 font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-500"></i> Reemplazo de Pantalla / Módulo</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-500"></i> Cambio de Baterías Originales</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-500"></i> Pin y Puerto de Carga</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-500"></i> Desoxidación de Equipos Mojados</li>
+                    </ul>
+                </div>
+
+                <!-- Microsoldadura PMIC -->
+                <div class="bg-brand-card p-6 rounded-2xl border border-brand-border hover:border-orange-500/60 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-950/50 border border-orange-500/30 flex items-center justify-center text-orange-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-white mb-2">Microsoldadura PMIC</h3>
+                    <p class="text-slate-400 text-sm mb-4">Diagnóstico avanzado con microscopio en placas madre cuando el equipo no enciende.</p>
+                    <ul class="space-y-2 text-xs text-slate-300 font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-500"></i> Reparación de IC de Carga</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-500"></i> Reballing y Cortocircuitos</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-500"></i> Reconstrucción de Pistas</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-500"></i> Solución de Códigos de Falla</li>
+                    </ul>
+                </div>
+
+                <!-- Notebooks -->
+                <div class="bg-brand-card p-6 rounded-2xl border border-brand-border hover:border-orange-500/60 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-950/50 border border-orange-500/30 flex items-center justify-center text-orange-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-laptop"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-white mb-2">Notebooks</h3>
+                    <p class="text-slate-400 text-sm mb-4">Mantenimiento preventivo, cambio de repuestos y optimización del sistema.</p>
+                    <ul class="space-y-2 text-xs text-slate-300 font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-500"></i> Mantenimiento Térmico Completo</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-500"></i> Cambio de Teclados y Pantallas</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-500"></i> Optimización con SSD y RAM</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-500"></i> Reparación de Bisagras</li>
+                    </ul>
+                </div>
+
+                <!-- PlayStation -->
+                <div class="bg-brand-card p-6 rounded-2xl border border-brand-border hover:border-orange-500/60 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-950/50 border border-orange-500/30 flex items-center justify-center text-orange-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-playstation"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-white mb-2">Consolas PlayStation</h3>
+                    <p class="text-slate-400 text-sm mb-4">Service y reparación de hardware para consolas PS4 y PS5.</p>
+                    <ul class="space-y-2 text-xs text-slate-300 font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-500"></i> Reemplazo de Puerto HDMI</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-500"></i> Limpieza y Metal Líquido / Pasta</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-500"></i> Reparación de Fuentes de Poder</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-500"></i> Error de Apagado por Temperatura</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cotizador" class="py-20 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-card rounded-3xl border border-brand-border p-6 sm:p-10 shadow-2xl relative">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="px-3 py-1 rounded-full bg-orange-950 text-orange-400 border border-orange-800 text-xs font-mono font-bold">PRESUPUESTO RÁPIDO</span>
+                    <h2 class="text-3xl font-heading font-black text-white uppercase mt-3">Cotizá tu Reparación</h2>
+                    <p class="text-slate-400 text-sm mt-2">Completa los datos y te enviamos la consulta armada directamente por WhatsApp.</p>
+                </div>
+
+                <form id="quote-form" class="space-y-6">
+                    <!-- Dispositivo -->
+                    <div>
+                        <label class="block text-sm font-bold text-slate-200 mb-3">1. Tipo de Dispositivo:</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="device" value="Android" class="peer hidden" checked>
+                                <div class="p-3.5 rounded-xl bg-slate-950 border border-brand-border text-center peer-checked:border-orange-500 peer-checked:bg-orange-950/40 transition-all">
+                                    <i class="fa-brands fa-android text-xl mb-1 text-emerald-400"></i>
+                                    <div class="text-xs font-bold text-white font-heading">Android</div>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="device" value="iPhone" class="peer hidden">
+                                <div class="p-3.5 rounded-xl bg-slate-950 border border-brand-border text-center peer-checked:border-orange-500 peer-checked:bg-orange-950/40 transition-all">
+                                    <i class="fa-brands fa-apple text-xl mb-1 text-slate-200"></i>
+                                    <div class="text-xs font-bold text-white font-heading">iPhone</div>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="device" value="Notebook" class="peer hidden">
+                                <div class="p-3.5 rounded-xl bg-slate-950 border border-brand-border text-center peer-checked:border-orange-500 peer-checked:bg-orange-950/40 transition-all">
+                                    <i class="fa-solid fa-laptop text-xl mb-1 text-cyan-400"></i>
+                                    <div class="text-xs font-bold text-white font-heading">Notebook</div>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="device" value="PlayStation" class="peer hidden">
+                                <div class="p-3.5 rounded-xl bg-slate-950 border border-brand-border text-center peer-checked:border-orange-500 peer-checked:bg-orange-950/40 transition-all">
+                                    <i class="fa-brands fa-playstation text-xl mb-1 text-indigo-400"></i>
+                                    <div class="text-xs font-bold text-white font-heading">PlayStation</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Modelo -->
+                    <div>
+                        <label for="device-model" class="block text-sm font-bold text-slate-200 mb-2">2. Modelo exacto (Ej: Samsung S20, iPhone 12, PS4 Fat...):</label>
+                        <input type="text" id="device-model" placeholder="Ingresá la marca o modelo" 
+                               class="w-full bg-slate-950 border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 text-sm">
+                    </div>
+
+                    <!-- Falla -->
+                    <div>
+                        <label for="device-issue" class="block text-sm font-bold text-slate-200 mb-2">3. Falla o problema que presenta:</label>
+                        <select id="device-issue" class="w-full bg-slate-950 border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 text-sm">
+                            <option value="Cambio de Pantalla / Módulo">Cambio de Pantalla / Módulo</option>
+                            <option value="Cambio de Batería">Cambio de Batería</option>
+                            <option value="Pin de Carga / No carga">Pin de Carga / No carga</option>
+                            <option value="No enciende / Falla de Placa (Microsoldadura)">No enciende / Falla de Placa (Microsoldadura)</option>
+                            <option value="Equipo mojado / Humedad">Equipo mojado / Humedad</option>
+                            <option value="Puerto HDMI (PlayStation)">Puerto HDMI (PlayStation)</option>
+                            <option value="Mantenimiento Térmico / Limpieza">Mantenimiento Térmico / Limpieza</option>
+                            <option value="Otra Consulta">Otra Consulta</option>
+                        </select>
+                    </div>
+
+                    <!-- Botón Generador -->
+                    <button type="button" onclick="sendQuoteToWhatsApp()" 
+                            class="w-full gradient-orange-bg text-black font-extrabold py-4 rounded-xl text-base flex items-center justify-center gap-3 shadow-lg glow-orange hover:brightness-110 active:scale-95 transition-all">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Solicitar Presupuesto por WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="medios-pago" class="py-16 bg-[#06070a] border-t border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-xs font-mono font-bold text-orange-500 uppercase tracking-widest">Facilidades de Pago</span>
+            <h2 class="text-3xl font-heading font-black text-white mt-1 uppercase">Aceptamos Todos los Medios de Pago</h2>
+
+            <!-- Payment Methods Grid from Flyer -->
+            <div class="mt-10 bg-brand-card p-6 sm:p-8 rounded-3xl border border-brand-border max-w-4xl mx-auto">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 items-center justify-center">
+                    <div class="p-3 bg-slate-950 rounded-xl border border-brand-border text-center">
+                        <i class="fa-brands fa-cc-visa text-3xl text-blue-500"></i>
+                        <div class="text-[11px] font-bold text-slate-300 mt-1">VISA</div>
+                    </div>
+                    <div class="p-3 bg-slate-950 rounded-xl border border-brand-border text-center">
+                        <i class="fa-brands fa-cc-mastercard text-3xl text-orange-500"></i>
+                        <div class="text-[11px] font-bold text-slate-300 mt-1">Mastercard</div>
+                    </div>
+                    <div class="p-3 bg-slate-950 rounded-xl border border-brand-border text-center">
+                        <i class="fa-brands fa-cc-amex text-3xl text-cyan-400"></i>
+                        <div class="text-[11px] font-bold text-slate-300 mt-1">Amex</div>
+                    </div>
+                    <div class="p-3 bg-slate-950 rounded-xl border border-brand-border text-center">
+                        <i class="fa-solid fa-credit-card text-3xl text-orange-400"></i>
+                        <div class="text-[11px] font-bold text-slate-300 mt-1">Tarjeta Naranja</div>
+                    </div>
+                    <div class="p-3 bg-slate-950 rounded-xl border border-brand-border text-center">
+                        <i class="fa-solid fa-handshake text-3xl text-sky-400"></i>
+                        <div class="text-[11px] font-bold text-slate-300 mt-1">Mercado Pago</div>
+                    </div>
+                    <div class="p-3 bg-slate-950 rounded-xl border border-brand-border text-center">
+                        <i class="fa-solid fa-money-bill-transfer text-3xl text-emerald-400"></i>
+                        <div class="text-[11px] font-bold text-slate-300 mt-1">Transferencia</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Location details -->
+                <div class="space-y-6">
+                    <div>
+                        <span class="text-xs font-mono font-bold text-orange-500 uppercase tracking-widest">Atención Presencial</span>
+                        <h2 class="text-3xl font-heading font-black text-white mt-1 uppercase">Ubicación y Horarios</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 bg-brand-card rounded-2xl border border-brand-border">
+                            <div class="w-10 h-10 rounded-xl bg-orange-950/60 border border-orange-800 flex items-center justify-center text-orange-500 text-lg shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-sm font-heading">Dirección del Laboratorio</h3>
+                                <p class="text-slate-300 text-sm mt-0.5">Av. Circunvalación Ing. Marzo Sur 1587</p>
+                                <p class="text-slate-400 text-xs">Santa Rosa, La Pampa (L6300GUC)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 bg-brand-card rounded-2xl border border-brand-border">
+                            <div class="w-10 h-10 rounded-xl bg-orange-950/60 border border-orange-800 flex items-center justify-center text-orange-500 text-lg shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div class="w-full">
+                                <h3 class="text-white font-bold text-sm font-heading mb-2">Horario de Atención</h3>
+                                <div class="text-xs space-y-1 text-slate-300 font-mono">
+                                    <div class="flex justify-between border-b border-slate-800 pb-1">
+                                        <span>Lunes a Viernes:</span>
+                                        <span class="text-orange-400 font-bold">09:00 - 18:00 hs</span>
+                                    </div>
+                                    <div class="flex justify-between pt-1">
+                                        <span>Sábados:</span>
+                                        <span class="text-orange-400 font-bold">10:00 - 14:00 hs</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 bg-brand-card rounded-2xl border border-brand-border">
+                            <div class="w-10 h-10 rounded-xl bg-orange-950/60 border border-orange-800 flex items-center justify-center text-orange-500 text-lg shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-sm font-heading">Llamadas y WhatsApp</h3>
+                                <p class="text-slate-300 text-sm mt-0.5">02954 27-4960</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Card -->
+                <div class="bg-brand-card p-6 rounded-3xl border border-brand-border text-center space-y-6">
+                    <div class="w-16 h-16 rounded-full bg-orange-950/80 border border-orange-500/40 flex items-center justify-center text-orange-500 text-3xl mx-auto glow-orange-sm">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-heading font-bold text-white">¿Cómo llegar a PMIC Reparaciones?</h3>
+                        <p class="text-slate-400 text-sm mt-1">Hacé clic en el botón para abrir la ubicación directa en Google Maps desde tu GPS.</p>
+                    </div>
+
+                    <a href="https://maps.google.com/?q=Av.+Circunvalación+Ing.+Marzo+Sur+1587,+Santa+Rosa,+La+Pampa" 
+                       target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center gap-3 bg-slate-900 hover:bg-slate-800 text-orange-400 border border-orange-500/40 font-bold px-8 py-4 rounded-xl text-sm transition-all shadow-lg">
+                        <i class="fa-solid fa-diamond-turn-right text-lg"></i>
+                        <span>Abrir en Google Maps</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#040507] border-t border-brand-border py-10 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <!-- Brand -->
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-orange-500 flex items-center justify-center text-black font-extrabold font-heading italic">
+                        R
+                    </div>
+                    <span class="font-heading font-bold text-white tracking-wider">PMIC REPARACIONES</span>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/pmicreparaciones/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-full bg-brand-card border border-brand-border flex items-center justify-center text-slate-300 hover:text-orange-500 hover:border-orange-500 transition-all">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                    </a>
+                    <a href="https://www.facebook.com/chelo.pmic/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 rounded-full bg-brand-card border border-brand-border flex items-center justify-center text-slate-300 hover:text-orange-500 hover:border-orange-500 transition-all">
+                        <i class="fa-brands fa-facebook-f text-lg"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@chelo.pmic" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="w-10 h-10 rounded-full bg-brand-card border border-brand-border flex items-center justify-center text-slate-300 hover:text-orange-500 hover:border-orange-500 transition-all">
+                        <i class="fa-brands fa-tiktok text-lg"></i>
+                    </a>
+                </div>
+
+                <div class="text-xs text-slate-500 text-center md:text-right">
+                    © 2026 PMIC Reparaciones. Santa Rosa, La Pampa.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/2954274960?text=Hola%20PMIC%20Reparaciones!%20Quisiera%20hacer%20una%20consulta" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp"
+       class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-slate-950 rounded-full flex items-center justify-center text-3xl shadow-2xl transition-all hover:scale-110 active:scale-95 group glow-orange-sm">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="absolute right-16 bg-slate-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg border border-slate-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            Escribinos por WhatsApp
+        </span>
+    </a>
+
+    <script>
+        // Mobile Menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // WhatsApp Quote Generator
+        function sendQuoteToWhatsApp() {
+            const selectedDevice = document.querySelector('input[name="device"]:checked').value;
+            const modelInput = document.getElementById('device-model').value.trim();
+            const selectedIssue = document.getElementById('device-issue').value;
+
+            let message = `Hola PMIC Reparaciones! Quisiera cotizar una reparación:%0A`;
+            message += `📱 *Dispositivo:* ${selectedDevice}%0A`;
+            if (modelInput) {
+                message += `🏷️ *Modelo:* ${modelInput}%0A`;
+            }
+            message += `🛠️ *Falla:* ${selectedIssue}%0A%0A`;
+            message += `Quedo a la espera de su respuesta. Muchas gracias!`;
+
+            const whatsappUrl = `https://wa.me/2954274960?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
